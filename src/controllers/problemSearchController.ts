@@ -44,7 +44,7 @@ export const searchProblems = async (req: Request, res: Response) => {
 
     const result = await esClient.search({
       index: "problems",
-      size: 50,
+      size: 100,
       query: {
         bool: {
           must: must.length ? must : [{ match_all: {} }],
